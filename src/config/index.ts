@@ -1,7 +1,8 @@
 const env = process.env.NODE_ENV || 'development'
 const debug = env !== 'production'
-const port = process.env.PORT || (env === 'production' ? 5000 : 5001)
-const host = process.env.HOST || `0.0.0.0:${port}`
+//const port = process.env.PORT || (env === 'production' ? 8000 : 8001)
+const port = (env === 'production' ? 8000 : 8001)
+const host = process.env.LISTEN || `0.0.0.0:${port}`
 
 const redis = {
   url: process.env.REDIS_URL || 'redis://localhost:6379/0',

@@ -2,5 +2,25 @@
   "extends": ["tslint-config-standard"],
   "rules": {
     "no-empty": false
-  }
+  },
+	"compilerOptions": {
+		"target": "es6",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"noEmit": true,
+		"strict": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+    "outDir": "build",
+    "module": "commonjs",
+    "lib": [ "es6" ],
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "include": [
+		"src"
+	]  
 }
