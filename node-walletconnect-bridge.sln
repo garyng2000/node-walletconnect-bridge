@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "node-walletconnect-bridge", "node-walletconnect-bridge.njsproj", "{EE9CC0B2-2A5E-4E0F-9C8A-70362F722C27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE9CC0B2-2A5E-4E0F-9C8A-70362F722C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9CC0B2-2A5E-4E0F-9C8A-70362F722C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9CC0B2-2A5E-4E0F-9C8A-70362F722C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9CC0B2-2A5E-4E0F-9C8A-70362F722C27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE9A449D-BAEC-4D7E-92BF-2BD03D31CDF1}
+	EndGlobalSection
+EndGlobal

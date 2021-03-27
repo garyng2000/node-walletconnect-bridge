@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ee9cc0b2-2a5e-4e0f-9c8a-70362f722c27}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ProjectFiles</ProjectView>
+    <StartupFile />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include=".ebextensions\00-alb-setup.config" />
+    <Content Include=".ebextensions\00-packages-certbot.config" />
+    <Content Include=".ebextensions\00-packages-freetds.config" />
+    <Content Include=".ebextensions\00-packages-mssql.config" />
+    <Content Include=".ebextensions\00-packages-_base.config" />
+    <Content Include=".ebextensions\00sample_log.config" />
+    <Content Include=".ebextensions\00_runtime-env.config" />
+    <Content Include=".ebextensions\02-https-nginx-certbot.config" />
+    <Content Include=".ebextensions\01-swap.config" />
+    <Content Include=".ebextensions\01_mount_efs.config" />
+    <Content Include=".ebextensions\01_setup_eb.config" />
+    <Content Include=".ebextensions\letsencrypt\cert.pem" />
+    <Content Include=".ebextensions\letsencrypt\chain.pem" />
+    <Content Include=".ebextensions\letsencrypt\fullchain.pem" />
+    <Content Include=".ebextensions\letsencrypt\privkey.pem" />
+    <Content Include=".ebextensions\letsencrypt\README" />
+    <Content Include=".ebextensions\platform\nginx.conf" />
+    <Content Include=".ebextensions\platform\odbcinst.ini" />
+    <Content Include=".ebextensions\platform\options-ssl-nginx.conf">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include=".ebextensions\platform\ssl-dhparams.pem">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include=".ebextensions\scripts\add-certbot-renew.sh" />
+    <Content Include=".ebextensions\scripts\add-swap-space.sh" />
+    <Content Include=".ebextensions\scripts\get-eb-info.sh" />
+    <Content Include=".ebextensions\scripts\import-certificate.sh" />
+    <Content Include=".ebextensions\scripts\install-certbot.sh" />
+    <Content Include=".platform\hooks\postdeploy\00-setup-nginx-https.sh" />
+    <Content Include=".platform\hooks\postdeploy\01-setup-odbc.sh" />
+    <Content Include=".platform\hooks\postdeploy\02-setup-mariadb.sh" />
+    <Content Include=".platform\hooks\postdeploy\99-cleanup.sh" />
+    <Content Include=".platform\nginx\conf.d\elasticbeanstalk\placeholder.txt" />
+    <Content Include=".platform\nginx\conf.d\http-https-proxy.conf" />
+    <Content Include=".platform\nginx\nginx.conf" />
+    <Content Include=".platform\nginx\README.txt" />
+    <Content Include=".platform\README.txt" />
+    <Content Include="build\config\index.js" />
+    <Content Include="build\index.js" />
+    <Content Include="build\keystore.js" />
+    <Content Include="build\notification.js" />
+    <Content Include="build\pubsub.js" />
+    <Content Include="build\types.js" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="web.config" />
+    <None Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="LICENSE.md" />
+    <Content Include="README.md" />
+    <None Include="src\index.ts" />
+    <None Include="src\keystore.ts" />
+    <None Include="src\notification.ts" />
+    <None Include="src\pubsub.ts" />
+    <None Include="src\types.ts" />
+    <None Include="src\config\index.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".ebextensions\" />
+    <Folder Include=".ebextensions\letsencrypt\" />
+    <Folder Include=".ebextensions\platform\" />
+    <Folder Include=".ebextensions\scripts\" />
+    <Folder Include=".platform\" />
+    <Folder Include=".platform\confighooks\" />
+    <Folder Include=".platform\confighooks\postdeploy\" />
+    <Folder Include=".platform\hooks\" />
+    <Folder Include=".platform\hooks\postdeploy\" />
+    <Folder Include=".platform\nginx\" />
+    <Folder Include=".platform\nginx\conf.d\" />
+    <Folder Include=".platform\nginx\conf.d\elasticbeanstalk\" />
+    <Folder Include="build\" />
+    <Folder Include="build\config\" />
+    <Folder Include="src" />
+    <Folder Include="src\config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ExcludeFromPackageFolders Include="node_modules">
+      <FromTarget>WPBridge.njsproj</FromTarget>
+    </ExcludeFromPackageFolders>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

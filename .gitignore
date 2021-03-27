@@ -47,3 +47,8 @@ build
 
 .makeFlags*
 config
+/app.publish
+/bin
+/obj
+/.vs
+/*.user
