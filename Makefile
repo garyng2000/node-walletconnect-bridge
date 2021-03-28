@@ -141,6 +141,12 @@ deploy-monitoring: setup build cloudflare
 
 down: stop
 
+eb:
+	npm run build
+	mkdir -p app.publish
+	rm -r app.publish/*
+	cp -ar build package.json .ebextensions .platform app.publish/
+	(cd app.publish && zip -r9 eb.zip .) 
 stop: 
 	docker stack rm $(project)
 	docker stack rm dev_$(project)

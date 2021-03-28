@@ -13,19 +13,16 @@
   "homepage": "https://walletconnect.org",
   "license": "LGPL-3.0",
   "dependencies": {
-    "@babel/runtime": "^7.11.5",
     "@babel/polyfill": "^7.11.5",
+    "@babel/runtime": "^7.11.5",
     "axios": "^0.19.2",
-    "core-js": "^3.6.5",
     "bluebird": "^3.7.2",
+    "core-js": "^3.6.5",
     "fastify": "^2.15.3",
     "fastify-helmet": "^3.0.2",
     "pino-pretty": "^4.2.1",
     "redis": "^2.8.0",
     "ws": "^7.3.1"
-  },
-  "engines": {
-    "node": "12.18.1" 
   },
   "scripts": {
     "build": "babel ./src --extensions \".ts\" --out-dir ./build",
@@ -43,10 +40,10 @@
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/register": "^7.11.5",
-    "@babel/plugin-transform-runtime": "^7.11.0",
     "@types/axios": "^0.14.0",
     "@types/bluebird": "^3.5.32",
     "@types/core-js": "^2.5.3",
