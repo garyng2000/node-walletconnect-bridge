@@ -20,6 +20,7 @@
     <Content Include=".ebextensions\00-alb-setup.config" />
     <Content Include=".ebextensions\00-packages-certbot.config" />
     <Content Include=".ebextensions\00-packages-freetds.config" />
+    <Content Include=".ebextensions\00-packages-redis.config" />
     <Content Include=".ebextensions\00-packages-mssql.config" />
     <Content Include=".ebextensions\00-packages-_base.config" />
     <Content Include=".ebextensions\00sample_log.config" />
