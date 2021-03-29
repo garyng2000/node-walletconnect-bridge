@@ -1,6 +1,16 @@
 # WalletConnect Bridge Server ⏮️🖥️⏭️
 
-Bridge Server for relaying WalletConnect connections. This is a fork from WalletConnect version. I have added support for deploying to AWS elastic beanstalk instead of running within docker. one still need to have a running redis server but that is simple to setup(either get it from AWS or spin up another EC2 instance)
+Bridge Server for relaying WalletConnect connections. 
+
+This is a fork from WalletConnect version. 
+
+I have added support for deploying to AWS elastic beanstalk instead of running within docker. one still need to have a running redis server but that is simple to setup(either get it from AWS or spin up another EC2 instance, and I have changed the EB script to include one)
+
+The main purpose of this fork is really about having an easy to scale out setup using AWS elastic beanstalk(with/without ELB) for production usage. Docker is good but scaling that out would be too complicated(Kubernetes).
+
+Concerning AWS elastic beanstalk, I just port from a python template I work on at here. read more about it there
+
+https://github.com/garyng2000/flaskweb
 
 ## Development 🧪
 
