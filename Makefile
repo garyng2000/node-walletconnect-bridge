@@ -17,6 +17,8 @@ $(shell mkdir -p $(flags))
 define DEFAULT_TEXT
 Available make rules:
 
+eb:\tcreate AWS elasticbeanstalk application zip(found under app.publish/eb.zip after build)
+
 pull:\tdownloads docker images
 
 setup:\tconfigures domain an certbot email
@@ -146,6 +148,9 @@ eb:
 	mkdir -p app.publish
 	rm -r app.publish/*
 	cp -ar build package.json .ebextensions .platform app.publish/
+	find app.publish -type f -name "*.sh" -exec chmod 0755 {} \+;	
+	find app.publish -type f -name "*.sh" -exec dos2unix {} \+;
+	cp -ar app.publish/.platform/hooks/postdeploy/* app.publish/.platform/confighooks/postdeploy/
 	(cd app.publish && zip -r9 eb.zip .) 
 stop: 
 	docker stack rm $(project)
