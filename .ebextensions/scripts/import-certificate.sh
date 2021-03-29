@@ -2,7 +2,7 @@
 source /tmp/get-eb-info.sh > /dev/null
 change_since=${1:-60}
 cert_type=$(/opt/elasticbeanstalk/bin/get-config environment -k CERT_TYPE)
-if [[ $cert_type != "production"]] || [[ $LOAD_BALANCER == "null" ]] || [[ $LOAD_BALANCER == "" ]]; then
+if [[ $cert_type != "production" ]] || [[ $LOAD_BALANCER == "null" ]] || [[ $LOAD_BALANCER == "" ]]; then
 	echo "not behind ELB or not production, nothing to import"
 	exit 0
 fi
